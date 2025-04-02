@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive meta tag -->
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showSection(sectionId) {
+            // Ensure all sections are hidden first
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Display the selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            } else {
+                console.error(`Section with id "${sectionId}" not found.`);
+            }
+        }
+
+        function togglePortfolioOptions() {
+            const options = document.getElementById('portfolio-options');
+            options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</head>
+<body>
+    <div class="hero">
+        <h1>Devid Saud</h1>
+        <p>Graphic Designer | Video Editor | Motion Graphics Designer</p>
+        <div class="buttons">
+            <button onclick="window.location.href='about.html'">About Me</button> <!-- Redirect to About Me -->
+            <div style="position: relative; display: inline-block;">
+                <button onclick="togglePortfolioOptions()">Portfolio</button> <!-- Show portfolio options -->
+                <div id="portfolio-options" class="portfolio-options" style="display: none; position: absolute; top: 100%; left: -5px;">
+                    <button onclick="window.location.href='portfolio.html'">Images</button>
+                    <button onclick="window.location.href='video.html'">Videos</button>
+                </div>
+            </div>
+            <button onclick="window.location.href='contact.html'">Contact</button> <!-- Redirect to Contact -->
+        </div>
+    </div>
+</body>
+</html>

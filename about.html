@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Devid Saud</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <script>
+        function togglePortfolioOptions() {
+            const options = document.getElementById('portfolio-options');
+            options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</head>
+<body>
+    <div class="buttons" style="text-align: right; margin-top: 20px; margin-right: 30px;"> <!-- Adjust spacing -->
+        <button onclick="window.location.href='index.html'">Home</button> <!-- Redirect to home page -->
+        <div style="position: relative; display: inline-block;">
+            <button onclick="togglePortfolioOptions()">Portfolio</button> <!-- Show portfolio options -->
+            <div id="portfolio-options" class="portfolio-options" style="display: none; position: absolute; top: 100%; right: -5px; width: 100%;"> <!-- Shift 1px right -->
+                <button style="width: 100%;" onclick="window.location.href='portfolio.html'">Images</button>
+                <button style="width: 100%;" onclick="window.location.href='video.html'">Videos</button>
+            </div>
+        </div>
+        <button onclick="window.location.href='contact.html'">Contact</button> <!-- Redirect to contact -->
+    </div>
+    <div id="about" class="content-section" style="display: block;"> <!-- Ensure content is visible -->
+        <div class="about-container">
+            <div class="about-left">
+                <h2>About Me</h2>
+                <p>
+                    Hi, I'm Devid Saud, a passionate graphic designer, video editor and motion graphics artist. I specialize in creating stunning visuals and compelling storytelling through design and motion.
+                </p>
+                <p>
+                    My mission is to bring creative ideas to life with attention to detail, and I strive to make every project unique and visually striking.
+                </p>
+            </div>
+            <div class="about-right">
+                <img src="profile.jpg" alt="Devid Saud" class="profile-img">
+            </div>
+        </div>
+        <div class="skills">
+            <h3>Skills</h3>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <div class="skill-name">Graphic Design</div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Video Editing</div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Motion Graphics</div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Music Production</div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="softwares">
+            <h3>Softwares I Know</h3>
+            <div class="software-grid">
+                <div class="software-item">
+                    <img src="./assets/icons/photoshop.png" alt="Photoshop"> <!-- Ensure the path is correct -->
+                    <p>Photoshop</p>
+                </div>
+                <div class="software-item">
+                    <img src="./assets/icons/premiere.png" alt="Premiere Pro"> <!-- Ensure the path is correct -->
+                    <p>Premiere Pro</p>
+                </div>
+                <div class="software-item">
+                    <img src="./assets/icons/aftereffects.png" alt="After Effects"> <!-- Ensure the path is correct -->
+                    <p>After Effects</p>
+                </div>
+                <div class="software-item">
+                    <img src="./assets/icons/davinci2.png" alt="Davinci Resolve"> <!-- Ensure the path is correct -->
+                    <p>Davinci Resolve</p>
+                </div>
+                <div class="software-item">
+                    <img src="./assets/icons/illustrator.png" alt="Illustrator"> <!-- Ensure the path is correct -->
+                    <p>Illustrator</p>
+                </div>
+                <div class="software-item">
+                    <img src="./assets/icons/flstudio.png" alt="Fl Studio"> <!-- Ensure the path is correct -->
+                    <p>Fl Studio</p>
+                </div>
+            </div>
+        </div>
+        <div class="languages">
+            <h3>Languages I Know</h3>
+            <div class="language-grid">
+                <div class="language-item">
+                    <p>Assamese</p>
+                </div>
+                <div class="language-item">
+                    <p>English</p>
+                </div>
+                <div class="language-item">
+                    <p>Hindi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

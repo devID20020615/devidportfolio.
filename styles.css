@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('bg.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow-y: auto; /* Ensure the page is scrollable */
+    animation: moveBg 10s linear infinite; /* Add animation */
+}
+
+@keyframes moveBg {
+    0% {
+        background-position: center center;
+    }
+    50% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center center;
+    }
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Add overlay effect */
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Ensure content stays above the animation */
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.hero .buttons {
+    display: flex;
+    justify-content: center; /* Center-align buttons for the home screen */
+    gap: 15px;
+    margin: 20px 0;
+}
+
+#about .buttons {
+    display: flex;
+    justify-content: flex-end; /* Right-align buttons */
+    gap: 15px;
+    margin-top: 30px; /* Add spacing to move buttons down */
+    margin-right: 30px; /* Add spacing from the right edge */
+}
+
+.buttons button {
+    background: #7F00FF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.buttons button:hover { 
+    background: transparent;
+    color: #7F00FF;
+    border: 2px solid #7F00FF;
+}
+
+.content-section {
+    display: none;
+    padding: 50px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    color: white;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    margin: 20px;
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.about-left {
+    flex: 1;
+    text-align: left;
+}
+
+.about-left h2 {
+    font-size: 3rem;
+    color: #7F00FF;
+    margin-bottom: 20px;
+}
+
+.about-left p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+.about-right {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #7F00FF;
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+}
+
+.skills {
+    margin-top: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skills h3 {
+    font-size: 2rem;
+    color: #7F00FF;
+    margin-bottom: 20px;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    direction: ltr; /* Change direction back to left-to-right */
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column; /* Stack the text and bar vertically */
+    align-items: flex-start; /* Align items to the left */
+    font-size: 1.1rem;
+    position: relative; /* Ensure the grey bar is positioned correctly */
+}
+
+.skill-bar-container {
+    position: relative;
+    width: 100%; /* Full width container for the bars */
+    height: 10px;
+    margin-top: 5px; /* Add spacing between the skill name and the bars */
+}
+
+.skill-bar-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width grey bar */
+    height: 10px;
+    background-color: #555; /* Grey color for the background bar */
+    border-radius: 5px;
+    z-index: 0; /* Ensure it appears below the colored bar */
+}
+
+.skill-bar {
+    position: relative;
+    width: 0; /* Default width, will be overridden inline */
+    height: 10px;
+    background-color: #7F00FF; /* Violet color for the skill bar */
+    border-radius: 5px;
+    z-index: 1; /* Ensure it appears above the grey bar */
+    transition: width 0.5s ease;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: #7F00FF;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.about-abstract {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    position: relative;
+}
+
+.abstract-shape {
+    width: 100px;
+    height: 100px;
+    background: #7F00FF;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: float 4s infinite ease-in-out;
+}
+
+.abstract-shape:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    animation-delay: 1s;
+}
+
+.abstract-shape:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Portfolio Section Styles */
+.portfolio-section {
+    padding: 50px;
+    background: #0a0a0a;
+    color: white;
+    text-align: center;
+}
+
+.portfolio-section h2 {
+    font-size: 2em;
+    color: #a100ff;
+}
+
+.portfolio-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    position: relative; /* Ensure child elements are positioned relative to this container */
+}
+
+.portfolio-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.portfolio-container:hover .portfolio-item {
+    filter: blur(2px) brightness(0.7); /* Dim and blur all items */
+    transform: scale(0.95); /* Slightly shrink all items */
+}
+
+.portfolio-container:hover .portfolio-item:hover {
+    filter: none; /* Remove blur and dim on the hovered item */
+    transform: scale(1.05); /* Enlarge the hovered item */
+    z-index: 1; /* Bring the hovered item to the front */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Add a shadow for emphasis */
+}
+
+.portfolio-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Maintain 1:1 aspect ratio */
+    object-fit: cover;
+    display: block; /* Ensure the image is displayed as a block element */
+}
+
+.portfolio-container:first-of-type .portfolio-item img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio for the first container */
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-container:last-of-type .portfolio-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Maintain 1:1 aspect ratio for the second container */
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-info {
+    padding: 15px;
+}
+
+.portfolio-info h3 {
+    color: #a100ff;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 177.78%; /* 9:16 aspect ratio (100 / 9 * 16) */
+    overflow: hidden;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    background: #000; /* Optional: Add a background color */
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.video-wrapper:hover video {
+    filter: none; /* Remove any dimming or blur */
+    transform: scale(1.05); /* Enlarge the hovered video */
+    z-index: 1; /* Bring the hovered video to the front */
+}
+
+.video-wrapper:hover video::-webkit-media-controls {
+    display: none; /* Hide controls on hover for a cleaner look */
+}
+
+/* Portfolio Options Styles */
+.portfolio-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Reduce gap between buttons */
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px; /* Adjust padding for a compact look */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 100%; /* Match the width of the parent button */
+}
+
+.portfolio-options button {
+    background: #7F00FF;
+    border: none;
+    color: white;
+    padding: 10px 20px; /* Match the padding of the "Portfolio" button */
+    font-size: 1rem; /* Match the font size of the "Portfolio" button */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center; /* Center-align text */
+}
+
+.portfolio-options button:hover {
+    background: transparent;
+    color: #7F00FF;
+    border: 2px solid #7F00FF;
+}
+
+/* Softwares I Know Section Styles */
+.softwares {
+    margin-top: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 1s ease-out forwards;
+    text-align: center;
+}
+
+.softwares h3 {
+    font-size: 2rem;
+    color: #7F00FF;
+    margin-bottom: 20px;
+}
+
+.software-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.software-item {
+    text-align: center;
+    color: #ddd;
+    transition: transform 0.3s ease;
+}
+
+.software-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.software-item img[alt="Premiere Pro"] {
+    position: relative;
+    left: -3px; /* Shift the icon 3px to the left */
+}
+
+.software-item:hover {
+    transform: scale(1.1); /* Keep the scaling effect */
+}
+
+.software-item:hover img[alt="Photoshop"],
+.software-item:hover img[alt="Premiere Pro"],
+.software-item:hover img[alt="After Effects"],
+.software-item:hover img[alt="Davinci Resolve"],
+.software-item:hover img[alt="Illustrator"],
+.software-item:hover img[alt="Fl Studio"] {
+    filter: brightness(1.2); /* Slightly brighten the image on hover */
+}
+
+.software-item p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Languages I Know Section Styles */
+.languages {
+    margin-top: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 1s ease-out forwards;
+    text-align: center;
+}
+
+.languages h3 {
+    font-size: 2rem;
+    color: #7F00FF;
+    margin-bottom: 20px;
+}
+
+.language-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.language-item {
+    text-align: center;
+    color: #ddd;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .buttons button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .content-section {
+        padding: 30px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-left, .about-right {
+        flex: none;
+        width: 100%;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .skills h3 {
+        font-size: 1.5rem;
+    }
+
+    .skills-list {
+        gap: 15px;
+    }
+
+    .skill-name {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .buttons button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    .about-left p {
+        font-size: 1rem;
+    }
+
+    .skills h3 {
+        font-size: 1.2rem;
+    }
+
+    .skills-list {
+        gap: 10px;
+    }
+}
